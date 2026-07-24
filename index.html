@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Trang chủ - @love</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 30px;
+            padding: 50px 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            text-align: center;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            box-shadow: 0 10px 30px rgba(102,126,234,0.3);
+        }
+        h1 {
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .sub {
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+        .sub strong {
+            color: #667eea;
+        }
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .btn {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(102,126,234,0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(102,126,234,0.5);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.08);
+            color: #ccc;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        .btn-danger {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(245,87,108,0.3);
+        }
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(245,87,108,0.5);
+        }
+        .status-box {
+            background: rgba(0,0,0,0.3);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 25px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .status-text {
+            color: #aaa;
+            font-size: 14px;
+        }
+        .status-text span {
+            color: #4ade80;
+        }
+        .footer {
+            margin-top: 25px;
+            color: #444;
+            font-size: 13px;
+        }
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px rgba(102,126,234,0.2); }
+            100% { text-shadow: 0 0 30px rgba(102,126,234,0.6); }
+        }
+        .input-box {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+        .input-box:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 25px rgba(102,126,234,0.15);
+        }
+        .input-box::placeholder {
+            color: #555;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Avatar -->
+    <div class="avatar">👑</div>
+
+    <!-- Tiêu đề -->
+    <h1 class="glow">Chào mừng đến với <strong style="color:#667eea;">@love</strong></h1>
+    <p class="sub">⚡ Trang web của chủ nhân <strong>love</strong> ⚡</p>
+
+    <!-- Nút bấm -->
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="alert('🔥 Xin chào chủ nhân love!')">💬 Nhắn tin</button>
+        <button class="btn btn-secondary" onclick="alert('📁 Đang tải dữ liệu...')">📂 Kho game</button>
+        <button class="btn btn-danger" onclick="document.getElementById('secret').classList.toggle('hidden')">🔓 Bí mật</button>
+    </div>
+
+    <!-- Ô nhập liệu -->
+    <input class="input-box" type="text" id="nameInput" placeholder="👤 Nhập tên của bạn..." oninput="updateGreeting()">
+
+    <!-- Trạng thái -->
+    <div class="status-box">
+        <div class="status-text" id="greetingText">🟢 Hệ thống hoạt động <span>100%</span></div>
+        <div class="status-text" style="margin-top:8px; font-size:13px; color:#666;">
+            📍 IP: <span id="ipDisplay">Đang lấy...</span> &nbsp;|&nbsp; 🕐 <span id="timeDisplay"></span>
+        </div>
+    </div>
+
+    <!-- Phần bí mật (ẩn) -->
+    <div id="secret" class="hidden" style="margin-top:20px; padding:15px; border-radius:12px; background:rgba(245,87,108,0.15); border:1px solid rgba(245,87,108,0.2);">
+        <p style="color:#f5576c; font-weight:600;">🔥 Bạn đã tìm thấy bí mật! 🔥</p>
+        <p style="color:#888; font-size:14px;">"Chỉ có chủ nhân love mới thấy được điều này!"</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Made with ❤️ by <a href="#">noti</a> | for <strong>@love</strong>
+    </div>
+</div>
+
+<script>
+    // Cập nhật lời chào theo tên nhập
+    function updateGreeting() {
+        const name = document.getElementById('nameInput').value || 'bạn';
+        document.getElementById('greetingText').innerHTML = `👋 Xin chào <strong style="color:#667eea;">${name}</strong>! <span>100%</span>`;
+    }
+
+    // Lấy IP (dùng API miễn phí)
+    fetch('https://api.ipify.org?format=json')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('ipDisplay').textContent = data.ip;
+        })
+        .catch(() => {
+            document.getElementById('ipDisplay').textContent = 'Không xác định';
+        });
+
+    // Hiển thị thời gian thực
+    function updateClock() {
+        const now = new Date();
+        document.getElementById('timeDisplay').textContent = now.toLocaleTimeString('vi-VN');
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
